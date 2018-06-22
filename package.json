@@ -1,0 +1,20 @@
+{
+  "name": "inti-abadi-sentosa-fix",
+  "version": "1.0.0",
+  "description": "Website Project for PT Inti Abadi Sentosa",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass styles/scss/main.scss styles/css/style.css"
+  },
+  "author": "juliananderson",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "hoek": "^5.0.3"
+  }
+}
