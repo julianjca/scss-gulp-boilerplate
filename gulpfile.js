@@ -11,7 +11,7 @@ gulp.task('styles', function(){
 });
 
 gulp.task('scripts', function(){
-	gulp.src('./js/*.js').
+	gulp.src('./scripts/*.js').
 	pipe(gulp.dest('./dist'));
 });
 
@@ -23,7 +23,7 @@ gulp.task('serve', function(){
 
 	});
 
-	gulp.watch('./scss/*.scss', ['styles']);
+	gulp.watch('./styles/scss/*.scss', ['styles']);
 	gulp.watch('./js/*.js', ['scripts']);
 	gulp.watch('./**/*.html').on('change',browserSync.reload);
 	gulp.watch('./**/*.js').on('change',browserSync.reload);
@@ -32,3 +32,10 @@ gulp.task('serve', function(){
 gulp.task('default', ['styles','scripts','serve']);
 
 gulp.task('deploy', ['styles','scripts']);
+
+gulp.task('watch:es6', () => {
+  return gulp.watch('./styles/scss/*.scss', gulp.series('es6:react', function (done) {
+    browserSync.reload();
+    done();
+  }));
+});
